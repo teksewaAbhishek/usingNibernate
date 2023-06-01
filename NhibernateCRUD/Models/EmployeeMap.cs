@@ -1,8 +1,4 @@
 ﻿using FluentNHibernate.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace NhibernateCRUD.Models
 {
@@ -11,6 +7,7 @@ namespace NhibernateCRUD.Models
         public EmployeeMap()
         {
             Id(x => x.Id);
+            //Id(x => x.Id).GeneratedBy.Identity();
             Map(x => x.FirstName);
             Map(x => x.LastName);
             Map(x => x.Designation);

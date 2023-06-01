@@ -28,7 +28,7 @@
                 <ExpandCollapseColumn ShowNoSortIcon="False" Created="True"></ExpandCollapseColumn>
 
                 <Columns>
-                    <telerik:GridBoundColumn DataField="FirstName" HeaderText="First Name" UniqueName="FirstName"  />
+                    <telerik:GridBoundColumn DataField="FirstName" HeaderText="First Name" UniqueName="FirstName" />
                     <telerik:GridBoundColumn DataField="LastName" HeaderText="Last Name" UniqueName="LastName" />
                     <telerik:GridBoundColumn DataField="Designation" HeaderText="Designation" UniqueName="Designation" />
                     <telerik:GridEditCommandColumn ButtonType="ImageButton" UniqueName="EditCommandColumn" />
