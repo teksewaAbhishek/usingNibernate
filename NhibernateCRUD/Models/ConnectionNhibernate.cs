@@ -11,7 +11,7 @@ namespace NhibernateCRUD.Models
         {
             ISessionFactory sessionFactory = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2008
-                  .ConnectionString(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sanju_teksewa\source\repos\NhibernateCRUD\NhibernateCRUD\App_Data\NhibernateData.mdf;Integrated Security=True")
+                  .ConnectionString(@"Data Source=DESKTOP-UI5N4QC;Initial Catalog=clinicalmanagementsystem;Integrated Security=True")
                               .ShowSql()
                 )
                .Mappings(m =>

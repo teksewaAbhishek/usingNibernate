@@ -1,3 +1,11 @@
+Telerik.Web.UI.RadToolTip, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
+Telerik.Web.UI.RadContextMenu, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
+Telerik.Web.UI.RadSkinManager, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
+Telerik.Web.UI.RadScriptBlock, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
+Telerik.Web.UI.RadDatePicker, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
+Telerik.Web.UI.RadWindow, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
+Telerik.Web.UI.RadPersistenceManager, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
+Telerik.Web.UI.RadAjaxManager, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
 Telerik.Web.UI.RadTextBox, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
 Telerik.Web.UI.RadButton, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
 Telerik.Web.UI.RadWindowManager, Telerik.Web.UI, Version=2023.1.323.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4
