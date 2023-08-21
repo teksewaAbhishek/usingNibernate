@@ -1,4 +1,5 @@
-﻿using NHibernate.Cfg.MappingSchema;
+﻿using FluentNHibernate.Conventions.Inspections;
+using NHibernate.Cfg.MappingSchema;
 using NhibernateCRUD.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace NhibernateCRUD
 {
-    public partial class EditItem : System.Web.UI.Page
+    public partial class DeleteItem : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,42 +26,36 @@ namespace NhibernateCRUD
                         if (employee != null)
                         {
                             hdnId.Value = employee.Id.ToString();
-                            txtFirstName.Text = employee.FirstName;
-                            txtLastName.Text = employee.LastName;
-                            txtDesignation.Text = employee.Designation;
+                            btnDelete_Click(sender, e);
+
+                        }
+                        else
+                        {
+                            btnDelete.Enabled = false;
                         }
                     }
                 }
             }
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
+        protected void btnDelete_Click(object sender, EventArgs e)
         {
             int id = int.Parse(hdnId.Value);
-            string firstName = txtFirstName.Text;
-            string lastName = txtLastName.Text;
-            string designation = txtDesignation.Text;
 
             using (var session = ConnectionNhibernate.OpenSession())
             {
                 var employee = session.Get<Employee>(id);
                 if (employee != null)
                 {
-                    employee.FirstName = firstName;
-                    employee.LastName = lastName;
-                    employee.Designation = designation;
-
                     using (var transaction = session.BeginTransaction())
                     {
-                        session.Update(employee);
+                        session.Delete(employee);
                         transaction.Commit();
                     }
                 }
             }
 
-            
             Response.Redirect("Default.aspx");
         }
-
     }
 }

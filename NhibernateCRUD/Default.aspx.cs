@@ -51,6 +51,30 @@ namespace NhibernateCRUD
             RadGrid1.Rebind();
         }
 
+      /*  protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Value.Trim();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                using (var session = ConnectionNhibernate.OpenSession())
+                {
+                    var employees = session.Query<Employee>()
+                        .Where(emp => emp.FirstName.Contains(searchTerm) || emp.LastName.Contains(searchTerm) || emp.Designation.Contains(searchTerm))
+                        .ToList();
+
+                    RadGrid1.DataSource = employees;
+                    RadGrid1.Rebind();
+                }
+            }
+            else
+            {
+
+                RadGrid1.Rebind();
+            }
+        }
+*/
+
 
         protected void RadGrid1_UpdateCommand(object sender, GridCommandEventArgs e)
         {
@@ -63,6 +87,9 @@ namespace NhibernateCRUD
             EmployeeManager.DeleteEmployee(e);
             RadGrid1.Rebind();
         }
+
+
+
 
         protected void btnAddItem_Click(object sender, EventArgs e)
         {
@@ -78,14 +105,7 @@ namespace NhibernateCRUD
                 return employees;
             }
         }
-        protected void RadGrid1_ItemCommand(object sender, GridCommandEventArgs e)
-        {
-            if (e.CommandName == "Delete" && e.CommandArgument is int index)
-            {
-                EmployeeManager.DeleteEmployee(e);
-                RadGrid1.Rebind();
-            }
-        }
+       
     }
 }
 

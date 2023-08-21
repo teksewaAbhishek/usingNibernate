@@ -11,7 +11,7 @@ namespace NhibernateCRUD
 {
 
 
-    public partial class EditItem
+    public partial class DeleteItem
     {
 
         /// <summary>

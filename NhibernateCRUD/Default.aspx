@@ -14,37 +14,63 @@
             margin-right: auto !important;
         }
     </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#RadGrid1").on("click", "td", function () {
+                // Remove previously added options
+                $(".row-options").remove();
+
+                // Get the clicked cell
+                var cell = $(this);
+
+                // Create the options HTML
+                var optionsHtml = '<div class="row-options">' +
+                    '<a href="#" class="edit-button">Edit</a>' +
+                    '<a href="#" class="delete-button">Delete</a>' +
+                    '</div>';
+
+                // Add the options to the cell
+                cell.append(optionsHtml);
+
+                // Attach click event to the edit button
+                cell.find(".edit-button").on("click", function (event) {
+                    event.preventDefault();
+                    // Handle the edit action
+                    var id = cell.closest("tr").find("td:eq(0)").text(); // Get the ID from the first cell
+                    window.location.href = "EditItem.aspx?id=" + id;
+                });
+
+                // Attach click event to the delete button
+                cell.find(".delete-button").on("click", function (event) {
+                    event.preventDefault();
+                    // Handle the delete action
+                    var id = cell.closest("tr").find("td:eq(0)").text(); // Get the ID from the first cell
+                    window.location.href = "DeleteItem.aspx?id=" + id;
+                    
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server" />
 
-        <asp:Button runat="server" ID="btnAddItem" Text="Add Item" OnClick="btnAddItem_Click" />
-
         <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="True" AllowSorting="True"
             OnNeedDataSource="RadGrid1_NeedDataSource"
-            OnDeleteCommand="RadGrid1_DeleteCommand" CssClass="auto-style1" Width="1440px" Skin="Bootstrap">
-           
+            CssClass="auto-style1" Width="1440px" Skin="Bootstrap">
+
             <MasterTableView AutoGenerateColumns="False" DataKeyNames="Id">
                 <Columns>
+                    <telerik:GridBoundColumn DataField="Id" HeaderText="ID" UniqueName="Id" />
                     <telerik:GridBoundColumn DataField="FirstName" HeaderText="First Name" UniqueName="FirstName" />
                     <telerik:GridBoundColumn DataField="LastName" HeaderText="Last Name" UniqueName="LastName" />
                     <telerik:GridBoundColumn DataField="Designation" HeaderText="Designation" UniqueName="Designation" />
-
-                    <telerik:GridTemplateColumn HeaderText="Actions">
-                        <ItemTemplate>
-                            <a href='<%# $"EditItem.aspx?id={Eval("Id")}" %>'>Edit</a>
-                            <asp:Button runat="server" ID="DeleteButton" Text="Delete" CommandName="Delete" CommandArgument='<%# Container.ItemIndex %>' />
-                        </ItemTemplate>
-                    </telerik:GridTemplateColumn>
                 </Columns>
             </MasterTableView>
         </telerik:RadGrid>
     </form>
-
-
-
-
-
-</body>/html>
+</body>
+</html>
 
