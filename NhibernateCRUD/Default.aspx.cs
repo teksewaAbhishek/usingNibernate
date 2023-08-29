@@ -51,7 +51,7 @@ namespace NhibernateCRUD
             RadGrid1.Rebind();
         }
 
-      /*  protected void btnSearch_Click(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
             string searchTerm = txtSearch.Value.Trim();
 
@@ -73,7 +73,7 @@ namespace NhibernateCRUD
                 RadGrid1.Rebind();
             }
         }
-*/
+
 
 
         protected void RadGrid1_UpdateCommand(object sender, GridCommandEventArgs e)
